@@ -1,0 +1,102 @@
+//
+//  MainViewController.swift
+//  Farah
+//
+//  Created by Adar Butel on 9/20/16.
+//  Copyright © 2016 com.adarbutel. All rights reserved.
+//
+
+import AVFoundation
+import Speech
+import UIKit
+
+private let TVFontSize = 25 as CGFloat
+
+// MARK: Properties & View Controller Methods
+class MainViewController: UIViewController, AVAudioRecorderDelegate {
+    
+    var name = "You"
+    var timer = Timer()
+    var increaseAlpha = false
+    var textToAnalyze: [String]?
+    var audioRecorder: AVAudioRecorder?
+    var recordingURL: URL!
+    var transcriptionURL: URL?
+    var recognizer: UILongPressGestureRecognizer!
+    
+    var audioRecordings = 0 {
+        didSet {
+            recordingURL = getDocumentsDirectory().appendingPathComponent("\(audioRecordings)recording.m4a")
+        }
+    }
+    
+    var transcriptions = 0 {
+        didSet {
+            transcriptionURL = getDocumentsDirectory().appendingPathComponent("\(audioRecordings)transcription.txt")
+        }
+    }
+    
+    var authorized = false {
+        didSet {
+            print(authorized)
+        }
+    }
+    
+    let talkButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("", for: .normal)
+        button.setImage(#imageLiteral(resourceName: "Microphone"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    let textView: UITextView = {
+        let textView = UITextView()
+        textView.isEditable = false
+        textView.isSelectable = false
+        textView.isScrollEnabled = false
+        textView.font = UIFont.systemFont(ofSize: TVFontSize)
+        textView.textColor = .white
+        textView.backgroundColor = .black
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        return textView
+    }()
+    
+    override func viewDidLoad() {
+        
+        navigationController?.isNavigationBarHidden = true
+        
+        recordingURL = getDocumentsDirectory().appendingPathComponent("\(audioRecordings)recording.m4a")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        setupViews()
+        checkPermissions()
+        
+        recognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(from:)))
+        recognizer.minimumPressDuration = 0.25
+        talkButton.addGestureRecognizer(recognizer)
+    }
+}
+
+// MARK: URL Methods
+extension MainViewController {
+    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
+    }
+}
+
+// MARK: AVAudioRecorderDelegate Methods
+extension MainViewController {
+    
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        if !flag {
+            finishRecording(success: false)
+        }
+    }
+}

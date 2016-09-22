@@ -14,21 +14,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
         // Set the window to be the size of the screen and make it visible
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        // Create the initial view controller and embed it into a navigation controller, then add children
-        let vc = ViewController()
-        // let gameVc = GameLibraryViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        // let instructionVc = InstructionViewController(collectionViewLayout: UICollectionViewLayout())
-        
+        // Create the initial view controller and embed it into a navigation controller
+        let vc = SignUpViewController()
         let navController = UINavigationController(rootViewController: vc)
-        // navController.addChildViewController(gameVc)
-        // navController.addChildViewController(instructionVc)
         
         window?.rootViewController = navController
         
