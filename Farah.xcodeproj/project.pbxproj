@@ -1,0 +1,551 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E88AD9411D9245C5002672D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88AD9401D9245C5002672D4 /* AppDelegate.swift */; };
+		E88AD9431D9245C5002672D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88AD9421D9245C5002672D4 /* ViewController.swift */; };
+		E88AD9491D9245C5002672D4 /* Farah.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E88AD9471D9245C5002672D4 /* Farah.xcdatamodeld */; };
+		E88AD94B1D9245C5002672D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E88AD94A1D9245C5002672D4 /* Assets.xcassets */; };
+		E88AD94E1D9245C5002672D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E88AD94C1D9245C5002672D4 /* LaunchScreen.storyboard */; };
+		E88AD9591D9245C5002672D4 /* FarahTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88AD9581D9245C5002672D4 /* FarahTests.swift */; };
+		E88AD9641D9245C5002672D4 /* FarahUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88AD9631D9245C5002672D4 /* FarahUITests.swift */; };
+		E8EBDC8C1D936D7300C51C5A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EBDC8B1D936D7300C51C5A /* Extensions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E88AD9551D9245C5002672D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E88AD9351D9245C5002672D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E88AD93C1D9245C5002672D4;
+			remoteInfo = Farah;
+		};
+		E88AD9601D9245C5002672D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E88AD9351D9245C5002672D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E88AD93C1D9245C5002672D4;
+			remoteInfo = Farah;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E88AD93D1D9245C5002672D4 /* Farah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Farah.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E88AD9401D9245C5002672D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E88AD9421D9245C5002672D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E88AD9481D9245C5002672D4 /* Farah.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Farah.xcdatamodel; sourceTree = "<group>"; };
+		E88AD94A1D9245C5002672D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E88AD94D1D9245C5002672D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E88AD94F1D9245C5002672D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E88AD9541D9245C5002672D4 /* FarahTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FarahTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E88AD9581D9245C5002672D4 /* FarahTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarahTests.swift; sourceTree = "<group>"; };
+		E88AD95A1D9245C5002672D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E88AD95F1D9245C5002672D4 /* FarahUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FarahUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E88AD9631D9245C5002672D4 /* FarahUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarahUITests.swift; sourceTree = "<group>"; };
+		E88AD9651D9245C5002672D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8EBDC8B1D936D7300C51C5A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E88AD93A1D9245C5002672D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E88AD9511D9245C5002672D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E88AD95C1D9245C5002672D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E88AD9341D9245C5002672D4 = {
+			isa = PBXGroup;
+			children = (
+				E88AD93F1D9245C5002672D4 /* Farah */,
+				E88AD9571D9245C5002672D4 /* FarahTests */,
+				E88AD9621D9245C5002672D4 /* FarahUITests */,
+				E88AD93E1D9245C5002672D4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E88AD93E1D9245C5002672D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E88AD93D1D9245C5002672D4 /* Farah.app */,
+				E88AD9541D9245C5002672D4 /* FarahTests.xctest */,
+				E88AD95F1D9245C5002672D4 /* FarahUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E88AD93F1D9245C5002672D4 /* Farah */ = {
+			isa = PBXGroup;
+			children = (
+				E88AD9401D9245C5002672D4 /* AppDelegate.swift */,
+				E88AD9421D9245C5002672D4 /* ViewController.swift */,
+				E8EBDC8B1D936D7300C51C5A /* Extensions.swift */,
+				E88AD94A1D9245C5002672D4 /* Assets.xcassets */,
+				E88AD94C1D9245C5002672D4 /* LaunchScreen.storyboard */,
+				E88AD94F1D9245C5002672D4 /* Info.plist */,
+				E88AD9471D9245C5002672D4 /* Farah.xcdatamodeld */,
+			);
+			path = Farah;
+			sourceTree = "<group>";
+		};
+		E88AD9571D9245C5002672D4 /* FarahTests */ = {
+			isa = PBXGroup;
+			children = (
+				E88AD9581D9245C5002672D4 /* FarahTests.swift */,
+				E88AD95A1D9245C5002672D4 /* Info.plist */,
+			);
+			path = FarahTests;
+			sourceTree = "<group>";
+		};
+		E88AD9621D9245C5002672D4 /* FarahUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E88AD9631D9245C5002672D4 /* FarahUITests.swift */,
+				E88AD9651D9245C5002672D4 /* Info.plist */,
+			);
+			path = FarahUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E88AD93C1D9245C5002672D4 /* Farah */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E88AD9681D9245C5002672D4 /* Build configuration list for PBXNativeTarget "Farah" */;
+			buildPhases = (
+				E88AD9391D9245C5002672D4 /* Sources */,
+				E88AD93A1D9245C5002672D4 /* Frameworks */,
+				E88AD93B1D9245C5002672D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Farah;
+			productName = Farah;
+			productReference = E88AD93D1D9245C5002672D4 /* Farah.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E88AD9531D9245C5002672D4 /* FarahTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E88AD96B1D9245C5002672D4 /* Build configuration list for PBXNativeTarget "FarahTests" */;
+			buildPhases = (
+				E88AD9501D9245C5002672D4 /* Sources */,
+				E88AD9511D9245C5002672D4 /* Frameworks */,
+				E88AD9521D9245C5002672D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E88AD9561D9245C5002672D4 /* PBXTargetDependency */,
+			);
+			name = FarahTests;
+			productName = FarahTests;
+			productReference = E88AD9541D9245C5002672D4 /* FarahTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E88AD95E1D9245C5002672D4 /* FarahUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E88AD96E1D9245C5002672D4 /* Build configuration list for PBXNativeTarget "FarahUITests" */;
+			buildPhases = (
+				E88AD95B1D9245C5002672D4 /* Sources */,
+				E88AD95C1D9245C5002672D4 /* Frameworks */,
+				E88AD95D1D9245C5002672D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E88AD9611D9245C5002672D4 /* PBXTargetDependency */,
+			);
+			name = FarahUITests;
+			productName = FarahUITests;
+			productReference = E88AD95F1D9245C5002672D4 /* FarahUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E88AD9351D9245C5002672D4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = com.adarbutel;
+				TargetAttributes = {
+					E88AD93C1D9245C5002672D4 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = HG2XZ7RZT6;
+						ProvisioningStyle = Automatic;
+					};
+					E88AD9531D9245C5002672D4 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = HG2XZ7RZT6;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E88AD93C1D9245C5002672D4;
+					};
+					E88AD95E1D9245C5002672D4 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = HG2XZ7RZT6;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E88AD93C1D9245C5002672D4;
+					};
+				};
+			};
+			buildConfigurationList = E88AD9381D9245C5002672D4 /* Build configuration list for PBXProject "Farah" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E88AD9341D9245C5002672D4;
+			productRefGroup = E88AD93E1D9245C5002672D4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E88AD93C1D9245C5002672D4 /* Farah */,
+				E88AD9531D9245C5002672D4 /* FarahTests */,
+				E88AD95E1D9245C5002672D4 /* FarahUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E88AD93B1D9245C5002672D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E88AD94E1D9245C5002672D4 /* LaunchScreen.storyboard in Resources */,
+				E88AD94B1D9245C5002672D4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E88AD9521D9245C5002672D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E88AD95D1D9245C5002672D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E88AD9391D9245C5002672D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E88AD9431D9245C5002672D4 /* ViewController.swift in Sources */,
+				E88AD9411D9245C5002672D4 /* AppDelegate.swift in Sources */,
+				E88AD9491D9245C5002672D4 /* Farah.xcdatamodeld in Sources */,
+				E8EBDC8C1D936D7300C51C5A /* Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E88AD9501D9245C5002672D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E88AD9591D9245C5002672D4 /* FarahTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E88AD95B1D9245C5002672D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E88AD9641D9245C5002672D4 /* FarahUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E88AD9561D9245C5002672D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E88AD93C1D9245C5002672D4 /* Farah */;
+			targetProxy = E88AD9551D9245C5002672D4 /* PBXContainerItemProxy */;
+		};
+		E88AD9611D9245C5002672D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E88AD93C1D9245C5002672D4 /* Farah */;
+			targetProxy = E88AD9601D9245C5002672D4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E88AD94C1D9245C5002672D4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E88AD94D1D9245C5002672D4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E88AD9661D9245C5002672D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E88AD9671D9245C5002672D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E88AD9691D9245C5002672D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HG2XZ7RZT6;
+				INFOPLIST_FILE = Farah/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adarbutel.Farah;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E88AD96A1D9245C5002672D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HG2XZ7RZT6;
+				INFOPLIST_FILE = Farah/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adarbutel.Farah;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		E88AD96C1D9245C5002672D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = HG2XZ7RZT6;
+				INFOPLIST_FILE = FarahTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adarbutel.FarahTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Farah.app/Farah";
+			};
+			name = Debug;
+		};
+		E88AD96D1D9245C5002672D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = HG2XZ7RZT6;
+				INFOPLIST_FILE = FarahTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adarbutel.FarahTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Farah.app/Farah";
+			};
+			name = Release;
+		};
+		E88AD96F1D9245C5002672D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = HG2XZ7RZT6;
+				INFOPLIST_FILE = FarahUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adarbutel.FarahUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Farah;
+			};
+			name = Debug;
+		};
+		E88AD9701D9245C5002672D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = HG2XZ7RZT6;
+				INFOPLIST_FILE = FarahUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adarbutel.FarahUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Farah;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E88AD9381D9245C5002672D4 /* Build configuration list for PBXProject "Farah" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E88AD9661D9245C5002672D4 /* Debug */,
+				E88AD9671D9245C5002672D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E88AD9681D9245C5002672D4 /* Build configuration list for PBXNativeTarget "Farah" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E88AD9691D9245C5002672D4 /* Debug */,
+				E88AD96A1D9245C5002672D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E88AD96B1D9245C5002672D4 /* Build configuration list for PBXNativeTarget "FarahTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E88AD96C1D9245C5002672D4 /* Debug */,
+				E88AD96D1D9245C5002672D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E88AD96E1D9245C5002672D4 /* Build configuration list for PBXNativeTarget "FarahUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E88AD96F1D9245C5002672D4 /* Debug */,
+				E88AD9701D9245C5002672D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E88AD9471D9245C5002672D4 /* Farah.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E88AD9481D9245C5002672D4 /* Farah.xcdatamodel */,
+			);
+			currentVersion = E88AD9481D9245C5002672D4 /* Farah.xcdatamodel */;
+			path = Farah.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E88AD9351D9245C5002672D4 /* Project object */;
+}
