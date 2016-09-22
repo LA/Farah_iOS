@@ -24,11 +24,11 @@ extension SignUpViewController {
         view.addConstraint(NSLayoutConstraint(item: signupButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0.0))
         
         // Make TextField half the size of the Button.
-        view.addConstraint(NSLayoutConstraint(item: nameTextField, attribute: .height, relatedBy: .equal, toItem: signupButton, attribute: .height, multiplier: 0.5, constant: 1.0))
+        view.addConstraint(NSLayoutConstraint(item: nameTextField, attribute: .height, relatedBy: .equal, toItem: signupButton, attribute: .height, multiplier: 0.15, constant: 1.0))
         
         // Layout Views with Visual Format
-        view.addConstraints(withFormat: "V:|-75-[v2]-5-[v0]-250-[v1]-45-|", views: nameTextField, signupButton, nameLabel)
-        view.addConstraints(withFormat: "H:|-25-[v0]-25-|", views: nameTextField)
-        view.addConstraints(withFormat: "H:|-25-[v0]|", views: nameLabel)
+        view.addConstraints(withFormat: "V:|-75-[v2]-5-[v0]-300-[v1]|", views: nameTextField, signupButton, nameLabel)
+        view.addConstraints(withFormat: "H:|-75-[v0]-75-|", views: nameTextField)
+        view.addConstraints(withFormat: "H:|-75-[v0]|", views: nameLabel)
     }
 }

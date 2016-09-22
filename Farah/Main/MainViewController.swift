@@ -16,6 +16,7 @@ private let TVFontSize = 25 as CGFloat
 class MainViewController: UIViewController, AVAudioRecorderDelegate {
     
     var name = "You"
+    var canUnderstand = false
     var timer = Timer()
     var increaseAlpha = false
     var textToAnalyze: [String]?
@@ -54,7 +55,7 @@ class MainViewController: UIViewController, AVAudioRecorderDelegate {
         let textView = UITextView()
         textView.isEditable = false
         textView.isSelectable = false
-        textView.isScrollEnabled = false
+        textView.isScrollEnabled = true
         textView.font = UIFont.systemFont(ofSize: TVFontSize)
         textView.textColor = .white
         textView.backgroundColor = .black

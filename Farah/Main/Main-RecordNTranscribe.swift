@@ -13,6 +13,7 @@ import Speech
 // MARK: Record and Transcribe Methods
 extension MainViewController {
     
+    
     func recordSpeech() {
         let recordingSession = AVAudioSession.sharedInstance()
         
@@ -46,6 +47,8 @@ extension MainViewController {
     
     func finishRecording(success: Bool) {
         
+        print("Called")
+        
         audioRecorder?.stop()
         
         if success {
@@ -56,30 +59,43 @@ extension MainViewController {
     
     func transcribeAudio(from audio: URL) {
         
+        print("Called2")
+        
         let recognizer = SFSpeechRecognizer()
         let request = SFSpeechURLRecognitionRequest(url: recordingURL)
         
         recognizer?.recognitionTask(with: request, resultHandler: { [unowned self] (result, error) in
             
-            guard result != nil else {
-                print("There was an error.")
-                return
-            }
-            
             if result!.isFinal {
+                
+                guard result != nil else {
+                    print("There was an error.")
+                    return
+                }
+                
                 let text = result?.bestTranscription.formattedString
                 
-                do {
-                    try text?.write(to: self.transcriptionURL!, atomically: true, encoding: .utf8)
-                    if text != nil {
-                        self.textView.insertText(text!)
-                        self.textToAnalyze = text!.components(separatedBy: " ")
-                        print(self.textToAnalyze)
+                //                    try text?.write(to: self.transcriptionURL!, atomically: true, encoding: .utf8)
+                if text != nil {
+                    self.textView.insertText(text!)
+                    let (message, success) = SimpleCases.sayCharacterCount(from: text!)
+                    if success {
+                        if message != nil {
+                            self.respond(with: message!)
+                            return
+                        }
+                    } else {
+                        self.respond(with: SimpleCases.doesNotUnderstand())
                     }
-                } catch {
-                    print("Failed to save transcription")
                 }
             }
         })
+    }
+    
+    func respond(with message: String) {
+        print("Called3")
+        textView.insertText("\n\n")
+        textView.insertText("Farah: ")
+        textView.insertText(message)
     }
 }

@@ -19,6 +19,7 @@
 		E81443331D9393BA00A6C054 /* SignUp-Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81443321D9393BA00A6C054 /* SignUp-Layout.swift */; };
 		E81443351D9393EE00A6C054 /* SignUp-ButtonMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81443341D9393EE00A6C054 /* SignUp-ButtonMethods.swift */; };
 		E81443371D9399E800A6C054 /* SignUp-TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81443361D9399E800A6C054 /* SignUp-TextFieldDelegate.swift */; };
+		E814433A1D93A94700A6C054 /* SimpleCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81443391D93A94700A6C054 /* SimpleCases.swift */; };
 		E88AD9491D9245C5002672D4 /* Farah.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E88AD9471D9245C5002672D4 /* Farah.xcdatamodeld */; };
 		E88AD94B1D9245C5002672D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E88AD94A1D9245C5002672D4 /* Assets.xcassets */; };
 		E88AD94E1D9245C5002672D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E88AD94C1D9245C5002672D4 /* LaunchScreen.storyboard */; };
@@ -56,6 +57,7 @@
 		E81443321D9393BA00A6C054 /* SignUp-Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SignUp-Layout.swift"; sourceTree = "<group>"; };
 		E81443341D9393EE00A6C054 /* SignUp-ButtonMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SignUp-ButtonMethods.swift"; sourceTree = "<group>"; };
 		E81443361D9399E800A6C054 /* SignUp-TextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SignUp-TextFieldDelegate.swift"; sourceTree = "<group>"; };
+		E81443391D93A94700A6C054 /* SimpleCases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCases.swift; sourceTree = "<group>"; };
 		E88AD93D1D9245C5002672D4 /* Farah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Farah.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E88AD9481D9245C5002672D4 /* Farah.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Farah.xcdatamodel; sourceTree = "<group>"; };
 		E88AD94A1D9245C5002672D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,6 +128,14 @@
 			path = Signup;
 			sourceTree = "<group>";
 		};
+		E81443381D93A92000A6C054 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				E81443391D93A94700A6C054 /* SimpleCases.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		E88AD9341D9245C5002672D4 = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +159,7 @@
 		E88AD93F1D9245C5002672D4 /* Farah */ = {
 			isa = PBXGroup;
 			children = (
+				E81443381D93A92000A6C054 /* Chat */,
 				E814431D1D938EDB00A6C054 /* Main */,
 				E814432F1D9393A100A6C054 /* Signup */,
 				E88AD94A1D9245C5002672D4 /* Assets.xcassets */,
@@ -319,6 +330,7 @@
 				E81443331D9393BA00A6C054 /* SignUp-Layout.swift in Sources */,
 				E81443241D938F3400A6C054 /* AppDelegate.swift in Sources */,
 				E81443371D9399E800A6C054 /* SignUp-TextFieldDelegate.swift in Sources */,
+				E814433A1D93A94700A6C054 /* SimpleCases.swift in Sources */,
 				E814432E1D93906A00A6C054 /* Main-Layout.swift in Sources */,
 				E88AD9491D9245C5002672D4 /* Farah.xcdatamodeld in Sources */,
 				E814431F1D938EDB00A6C054 /* MainViewController.swift in Sources */,
