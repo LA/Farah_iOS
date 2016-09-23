@@ -10,6 +10,7 @@ import AVFoundation
 import Speech
 import UIKit
 
+private let labelFontSize = 30 as CGFloat
 private let TVFontSize = 25 as CGFloat
 
 // MARK: Properties & View Controller Methods
@@ -49,6 +50,17 @@ class MainViewController: UIViewController, AVAudioRecorderDelegate {
         button.setImage(#imageLiteral(resourceName: "Microphone"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
+    }()
+    
+    let infoLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.text = "Hold down to speak to Farah."
+        label.font = UIFont.boldSystemFont(ofSize: labelFontSize)
+        label.textColor = .white
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     let textView: UITextView = {

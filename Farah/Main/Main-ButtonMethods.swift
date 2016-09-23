@@ -9,6 +9,10 @@
 private let timerInterval = 0.05 as Double
 private let alphaRate = 0.009 as CGFloat
 
+private let holdDownMsg = "Hold down to speak to Farah."
+private let speakNowMsg = "Speak now. Release to stop recording."
+private let transcribingMsg = "Transcribing..."
+
 import Foundation
 import UIKit
 
@@ -20,12 +24,14 @@ extension MainViewController {
         if sender.state == .began {
             talkButton.setImage(#imageLiteral(resourceName: "Recording Microphone"), for: .normal)
             textView.text = ""
+            changeLabel(transcribing: false)
             timer = Timer.scheduledTimer(timeInterval: timerInterval, target: self, selector: #selector(pulseButton), userInfo: nil, repeats: true)
             recordSpeech()
         } else if sender.state == .ended {
             print("Ended")
             talkButton.setImage(#imageLiteral(resourceName: "Microphone"), for: .normal)
             talkButton.alpha = 1
+            changeLabel(transcribing: true)
             talkButton.isSelected = false
             timer.invalidate()
             finishRecording(success: true)
@@ -43,6 +49,23 @@ extension MainViewController {
             increaseAlpha = false
         } else if talkButton.alpha <= 0.4 {
             increaseAlpha = true
+        }
+    }
+    
+    func changeLabel(transcribing: Bool) {
+        if (transcribing) {
+            infoLabel.text = transcribingMsg
+            
+            let when = DispatchTime.now() + 2
+            DispatchQueue.main.asyncAfter(deadline: when) {
+                self.infoLabel.text = holdDownMsg
+            }
+        }
+
+        if (infoLabel.text == holdDownMsg) {
+            infoLabel.text = speakNowMsg
+        } else if infoLabel.text != transcribingMsg {
+            infoLabel.text = holdDownMsg
         }
     }
 }
