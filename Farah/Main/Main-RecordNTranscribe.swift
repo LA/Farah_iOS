@@ -62,7 +62,6 @@ extension MainViewController {
         // Change Label to Transcribing while Transcribing
         self.changeLabel(transcribing: true)
         
-        
         let recognizer = SFSpeechRecognizer()
         let request = SFSpeechURLRecognitionRequest(url: recordingURL)
         
@@ -70,6 +69,7 @@ extension MainViewController {
             
             guard result != nil else {
                 print("An error occurred")
+                // Switch Label back to Default Hold Down Message
                 self.changeLabel(transcribing: false)
                 return
             }
