@@ -59,6 +59,9 @@ extension MainViewController {
     
     func transcribeAudio(from audio: URL) {
         
+        // Change Label to Transcribing while Transcribing
+        self.changeLabel(transcribing: true)
+        
         print("Called2")
         
         let recognizer = SFSpeechRecognizer()
@@ -87,6 +90,9 @@ extension MainViewController {
                     } else {
                         self.respond(with: SimpleCases.doesNotUnderstand())
                     }
+                    
+                    // Switch Label back to Default Hold Down Message
+                    self.changeLabel(transcribing: false)
                 }
             }
         })

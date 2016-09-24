@@ -31,7 +31,6 @@ extension MainViewController {
             print("Ended")
             talkButton.setImage(#imageLiteral(resourceName: "Microphone"), for: .normal)
             talkButton.alpha = 1
-            changeLabel(transcribing: true)
             talkButton.isSelected = false
             timer.invalidate()
             finishRecording(success: true)
@@ -55,16 +54,12 @@ extension MainViewController {
     func changeLabel(transcribing: Bool) {
         if (transcribing) {
             infoLabel.text = transcribingMsg
-            
-            let when = DispatchTime.now() + 2
-            DispatchQueue.main.asyncAfter(deadline: when) {
-                self.infoLabel.text = holdDownMsg
-            }
+            return
         }
 
         if (infoLabel.text == holdDownMsg) {
             infoLabel.text = speakNowMsg
-        } else if infoLabel.text != transcribingMsg {
+        } else if infoLabel.text == transcribingMsg {
             infoLabel.text = holdDownMsg
         }
     }
