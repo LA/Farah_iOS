@@ -47,8 +47,6 @@ extension MainViewController {
     
     func finishRecording(success: Bool) {
         
-        print("Called")
-        
         audioRecorder?.stop()
         
         if success {
@@ -84,7 +82,6 @@ extension MainViewController {
                     if success {
                         if message != nil {
                             self.respond(with: message!)
-                            return
                         }
                     } else {
                         self.respond(with: SimpleCases.doesNotUnderstand())
