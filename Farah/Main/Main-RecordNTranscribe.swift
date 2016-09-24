@@ -76,14 +76,24 @@ extension MainViewController {
                 
                 if let text = result?.bestTranscription.formattedString {
                     
+                    var successful = false
+                    
                     //                    try text?.write(to: self.transcriptionURL!, atomically: true, encoding: .utf8)
                     self.textView.insertText(text)
-                    let (message, success) = SimpleCases.sayCharacterCount(from: text)
-                    if success {
-                        if message != nil {
-                            self.respond(with: message!)
-                        }
-                    } else {
+                    
+                    // Say Character Count
+                    if SimpleCases.sayCharacterCount(from: text).1 && !successful {
+                        self.respond(with: SimpleCases.sayCharacterCount(from: text).0!)
+                        successful = true
+                    }
+                    
+                    // Say Doing Well
+                    if SimpleCases.sayDoingWell(from: text).1 && !successful {
+                        self.respond(with: SimpleCases.sayDoingWell(from: text).0!)
+                        successful = true
+                    }
+                    
+                    if !successful {
                         self.respond(with: SimpleCases.doesNotUnderstand())
                     }
                     
