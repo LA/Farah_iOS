@@ -62,26 +62,25 @@ extension MainViewController {
         // Change Label to Transcribing while Transcribing
         self.changeLabel(transcribing: true)
         
-        print("Called2")
         
         let recognizer = SFSpeechRecognizer()
         let request = SFSpeechURLRecognitionRequest(url: recordingURL)
         
         recognizer?.recognitionTask(with: request, resultHandler: { [unowned self] (result, error) in
             
+            guard result != nil else {
+                print("An error occurred")
+                self.changeLabel(transcribing: false)
+                return
+            }
+            
             if result!.isFinal {
                 
-                guard result != nil else {
-                    print("There was an error.")
-                    return
-                }
-                
-                let text = result?.bestTranscription.formattedString
-                
-                //                    try text?.write(to: self.transcriptionURL!, atomically: true, encoding: .utf8)
-                if text != nil {
-                    self.textView.insertText(text!)
-                    let (message, success) = SimpleCases.sayCharacterCount(from: text!)
+                if let text = result?.bestTranscription.formattedString {
+                    
+                    //                    try text?.write(to: self.transcriptionURL!, atomically: true, encoding: .utf8)
+                    self.textView.insertText(text)
+                    let (message, success) = SimpleCases.sayCharacterCount(from: text)
                     if success {
                         if message != nil {
                             self.respond(with: message!)
@@ -93,13 +92,13 @@ extension MainViewController {
                     
                     // Switch Label back to Default Hold Down Message
                     self.changeLabel(transcribing: false)
+                    
                 }
             }
         })
     }
     
     func respond(with message: String) {
-        print("Called3")
         textView.insertText("\n\n")
         textView.insertText("Farah: ")
         textView.insertText(message)
