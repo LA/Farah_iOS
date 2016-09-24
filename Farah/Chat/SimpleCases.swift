@@ -25,7 +25,7 @@ struct SimpleCases {
         
         let message = string.lowercased()
         
-        if (message.contains("what's good") || message.contains("how are you") || message.contains("doing")) {
+        if (message.contains("what's good") || message.contains("how are you") || message.contains("you doing")) {
             return ("I'm doing well. Thank you for asking.", true)
         }
         

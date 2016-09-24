@@ -78,7 +78,8 @@ extension MainViewController {
                     
                     var successful = false
                     
-                    //                    try text?.write(to: self.transcriptionURL!, atomically: true, encoding: .utf8)
+                    // try text?.write(to: self.transcriptionURL!, atomically: true, encoding: .utf8)
+                    
                     self.textView.insertText(text)
                     
                     // Say Character Count

@@ -7,7 +7,7 @@
 //
 
 private let timerInterval = 0.05 as Double
-private let alphaRate = 0.009 as CGFloat
+private let alphaRate = 0.01 as CGFloat
 
 private let holdDownMsg = "Hold down to speak to Farah."
 private let speakNowMsg = "Speak now. Release to stop recording."
@@ -20,7 +20,6 @@ import UIKit
 extension MainViewController {
     
     func handleLongPress(from sender: UILongPressGestureRecognizer) {
-        print("Long Press Activated")
         if sender.state == .began {
             talkButton.setImage(#imageLiteral(resourceName: "Recording Microphone"), for: .normal)
             textView.text = ""
