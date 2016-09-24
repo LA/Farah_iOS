@@ -32,6 +32,17 @@ struct SimpleCases {
         return (nil, false)
     }
     
+    static func sayIAm(from string: String) -> (String?, Bool) {
+        
+        let message = string.lowercased()
+        
+        if (message.contains("who are you") || message.contains("what are you") || message.contains("what is this")) {
+            return ("I am Farah, a chat bot, created in Swift 3 by Adar Butel.", true)
+        }
+        
+        return (nil, false)
+    }
+    
     static func doesNotUnderstand() -> String {
         return "I'm sorry, I do not understand you."
     }

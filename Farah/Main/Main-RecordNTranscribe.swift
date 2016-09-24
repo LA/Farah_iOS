@@ -94,6 +94,13 @@ extension MainViewController {
                         successful = true
                     }
                     
+                    // Say I Am Farah
+                    if SimpleCases.sayIAm(from: text).1 && !successful {
+                        self.respond(with: SimpleCases.sayIAm(from: text).0!)
+                        successful = true
+                        
+                    }
+                    
                     if !successful {
                         self.respond(with: SimpleCases.doesNotUnderstand())
                     }
