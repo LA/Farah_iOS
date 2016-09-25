@@ -75,35 +75,12 @@ extension MainViewController {
             if result!.isFinal {
                 
                 if let text = result?.bestTranscription.formattedString {
-                    
-                    var successful = false
-                    
+                                        
                     // try text?.write(to: self.transcriptionURL!, atomically: true, encoding: .utf8)
                     
                     self.textView.insertText(text)
                     
-                    // Say Character Count
-                    if SimpleCases.sayCharacterCount(from: text).1 && !successful {
-                        self.respond(with: SimpleCases.sayCharacterCount(from: text).0!)
-                        successful = true
-                    }
-                    
-                    // Say Doing Well
-                    if SimpleCases.sayDoingWell(from: text).1 && !successful {
-                        self.respond(with: SimpleCases.sayDoingWell(from: text).0!)
-                        successful = true
-                    }
-                    
-                    // Say I Am Farah
-                    if SimpleCases.sayIAm(from: text).1 && !successful {
-                        self.respond(with: SimpleCases.sayIAm(from: text).0!)
-                        successful = true
-                        
-                    }
-                    
-                    if !successful {
-                        self.respond(with: SimpleCases.doesNotUnderstand())
-                    }
+                    self.respond(with: Response.grabResponse(from: text))
                     
                     // Switch Label back to Default Hold Down Message
                     self.changeLabel(transcribing: false)
