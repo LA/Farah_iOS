@@ -67,6 +67,7 @@ extension MainViewController {
             
             guard result != nil else {
                 print("An error occurred")
+                
                 // Switch Label back to Default Hold Down Message
                 self.changeLabel(transcribing: false)
                 return
@@ -78,8 +79,10 @@ extension MainViewController {
                                         
                     // try text?.write(to: self.transcriptionURL!, atomically: true, encoding: .utf8)
                     
+                    // Insert user text.
                     self.textView.insertText(text)
                     
+                    // Grab response and send it.
                     self.respond(with: Response.grabResponse(from: text))
                     
                     // Switch Label back to Default Hold Down Message

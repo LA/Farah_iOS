@@ -30,7 +30,6 @@ extension MainViewController {
             print("Ended")
             talkButton.setImage(#imageLiteral(resourceName: "Microphone"), for: .normal)
             talkButton.alpha = 1
-            talkButton.isSelected = false
             timer.invalidate()
             finishRecording(success: true)
         }
