@@ -34,7 +34,7 @@ class MainViewController: UIViewController, AVAudioRecorderDelegate {
     
     var transcriptions = 0 {
         didSet {
-            transcriptionURL = getDocumentsDirectory().appendingPathComponent("\(audioRecordings)transcription.txt")
+            transcriptionURL = getDocumentsDirectory().appendingPathComponent("\(transcriptions)transcription.txt")
         }
     }
     

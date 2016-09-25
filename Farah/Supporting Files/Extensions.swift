@@ -29,7 +29,7 @@ extension UIView {
 // Random Number Extension
 extension Int {
     
-    static func randomIntFrom(start: Int, to end: Int) -> Int {
+    static func randomIntFrom(_ start: Int, to end: Int) -> Int {
         var a = start
         var b = end
         // swap to prevent negative integer crashes
