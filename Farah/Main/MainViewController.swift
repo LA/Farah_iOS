@@ -38,11 +38,7 @@ class MainViewController: UIViewController, AVAudioRecorderDelegate {
         }
     }
     
-    var authorized = false {
-        didSet {
-            print(authorized)
-        }
-    }
+    var authorized = false
     
     let talkButton: UIButton = {
         let button = UIButton()
