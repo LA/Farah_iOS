@@ -12,6 +12,7 @@ import UIKit
 
 private let labelFontSize = 30 as CGFloat
 private let TVFontSize = 25 as CGFloat
+private let duration = 0.25
 
 // MARK: Properties & View Controller Methods
 class MainViewController: UIViewController, AVAudioRecorderDelegate {
@@ -85,7 +86,7 @@ class MainViewController: UIViewController, AVAudioRecorderDelegate {
         checkPermissions()
         
         recognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(from:)))
-        recognizer.minimumPressDuration = 0.25
+        recognizer.minimumPressDuration = duration
         talkButton.addGestureRecognizer(recognizer)
     }
 }
