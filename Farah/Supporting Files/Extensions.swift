@@ -39,3 +39,14 @@ extension Int {
         return Int(arc4random_uniform(UInt32(b - a + 1))) + a
     }
 }
+
+
+// Collection Extension
+extension Collection {
+    
+    /// Returns the element at the specified index if it is within bounds, otherwise nil.
+    subscript (safe index: Index) -> Iterator.Element? {
+        return index >= startIndex && index < endIndex ? self[index] : nil
+        
+    }
+}

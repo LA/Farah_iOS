@@ -17,8 +17,6 @@ extension MainViewController {
     func recordSpeech() {
         let recordingSession = AVAudioSession.sharedInstance()
         
-        print("Recording Speech...")
-        
         textView.insertText("\(name): ")
         
         do {
@@ -79,16 +77,17 @@ extension MainViewController {
                                         
                     // try text?.write(to: self.transcriptionURL!, atomically: true, encoding: .utf8)
                     
-                    // Insert user text.
                     self.textView.insertText(text)
                     
-                    // Grab response and send it.
-                    self.respond(with: Response.grabResponse(from: text))
-                    
-                    // Switch Label back to Default Hold Down Message
-                    self.changeLabel(transcribing: false)
-                    
+                    self.textUser(from: text)
+
+                    if Response.grabResponse(from: text).1 {
+                        self.respond(with: Response.grabResponse(from: text).0)
+                    }
                 }
+                
+                // Switch Label back to Default Hold Down Message
+                self.changeLabel(transcribing: false)
             }
         })
     }
