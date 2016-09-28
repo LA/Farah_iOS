@@ -1,5 +1,5 @@
 //
-//  SignUp-Layout.swift
+//  Layout.swift
 //  Farah
 //
 //  Created by Adar Butel on 9/21/16.

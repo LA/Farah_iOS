@@ -1,5 +1,5 @@
 //
-//  Main-SMS.swift
+//  TextMethods.swift
 //  Farah
 //
 //  Created by Adar Butel on 9/26/16.
