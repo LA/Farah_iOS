@@ -7,6 +7,7 @@
 //
 
 import AVFoundation
+import Contacts
 import Speech
 
 // MARK: Permissions
@@ -17,12 +18,14 @@ extension MainViewController {
         let transcribeAuthorized = SFSpeechRecognizer.authorizationStatus() == .authorized
         let recordingAuthorized = AVAudioSession.sharedInstance().recordPermission() == .granted
         
+        let contactsAuthorized = CNContactStore.authorizationStatus(for: .contacts) == .authorized
+        
         // make a single authorized boolean from all three
-        let authorized = recordingAuthorized && transcribeAuthorized
+        let authorized = recordingAuthorized && transcribeAuthorized && contactsAuthorized
         
         //if we're missing one show the first screen
         if !authorized {
-            requestRecordPermissions()
+            requestContactPermissions()
         }
     }
     
@@ -46,6 +49,16 @@ extension MainViewController {
                 } else {
                     print("Declined")
                 }
+            }
+        }
+    }
+    
+    func requestContactPermissions() {
+        CNContactStore().requestAccess(for: .contacts) { (allowed, error) in
+            if allowed {
+                self.requestRecordPermissions()
+            } else {
+                print("Declined")
             }
         }
     }

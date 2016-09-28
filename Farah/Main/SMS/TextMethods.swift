@@ -37,8 +37,12 @@ extension MainViewController: MFMessageComposeViewControllerDelegate {
                 let personIndex = textIndex.advanced(by: 1)
                 
                 if let person = messageArray[safe: personIndex]?.capitalized {
+
+                    var phoneNumber: [String]? = [findPhoneNumber(from: person)]
                     
-                    let fixedPerson = [person.capitalized]
+                    if phoneNumber! == [""] {
+                        phoneNumber = nil
+                    }
                     
                     var fixedMessageArray = Array(messageArray[personIndex + 1...messageArray.endIndex - 1])
                     
@@ -46,7 +50,7 @@ extension MainViewController: MFMessageComposeViewControllerDelegate {
                     
                     let fixedMessage = fixedMessageArray.joined(separator: " ")
                     
-                    openSMS(with: fixedMessage, to: fixedPerson)
+                    openSMS(with: fixedMessage, to: phoneNumber)
                     
                     return
                 }

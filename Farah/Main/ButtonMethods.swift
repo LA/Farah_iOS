@@ -27,7 +27,6 @@ extension MainViewController {
             timer = Timer.scheduledTimer(timeInterval: timerInterval, target: self, selector: #selector(pulseButton), userInfo: nil, repeats: true)
             recordSpeech()
         } else if sender.state == .ended {
-            print("Ended")
             talkButton.setImage(#imageLiteral(resourceName: "Microphone"), for: .normal)
             talkButton.alpha = 1
             timer.invalidate()

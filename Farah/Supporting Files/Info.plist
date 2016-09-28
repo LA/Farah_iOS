@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSContactsUsageDescription</key>
+	<string>Contacts are required for texting and calling by name.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>Speech access is required for Farah to speak.</string>
 	<key>NSMicrophoneUsageDescription</key>
