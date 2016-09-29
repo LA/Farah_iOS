@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+// Global BG Color
+let homeBGColor = UIColor.white
+
 // Visual Format Extension
 extension UIView {
     

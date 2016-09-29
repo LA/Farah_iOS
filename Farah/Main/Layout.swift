@@ -18,6 +18,8 @@ extension MainViewController {
         view.addSubview(textView)
         view.addSubview(infoLabel)
         
+        view.backgroundColor = homeBGColor
+        
         // Center properties horizontally.
         view.addConstraint(NSLayoutConstraint(item: talkButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0.0))
         view.addConstraint(NSLayoutConstraint(item: infoLabel, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0.0))

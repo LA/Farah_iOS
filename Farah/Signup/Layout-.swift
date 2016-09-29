@@ -21,6 +21,8 @@ extension SignUpViewController {
         view.addSubview(signupButton)
         view.addSubview(nameLabel)
         
+        view.backgroundColor = homeBGColor
+        
         // Center Everything Horizontally
         view.addConstraint(NSLayoutConstraint(item: nameTextField, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0.0))
         view.addConstraint(NSLayoutConstraint(item: signupButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0.0))

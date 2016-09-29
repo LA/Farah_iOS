@@ -29,7 +29,7 @@ class SignUpViewController: UIViewController {
     let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Name"
-        label.textColor = .white
+        label.textColor = .lightGray
         label.font = UIFont.systemFont(ofSize: labelSize)
         label.frame.size.height = 15
         return label
@@ -39,11 +39,11 @@ class SignUpViewController: UIViewController {
         let textField = UITextField()
         textField.text = ""
         textField.textAlignment = .center
-        textField.layer.borderColor = UIColor.white.cgColor
+        textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.layer.borderWidth = 1
         textField.font = UIFont.systemFont(ofSize: TFFontSize)
         textField.autocapitalizationType = .words
-        textField.textColor = .white
+        textField.textColor = .lightGray
         textField.keyboardAppearance = .dark
         textField.returnKeyType = .continue
         return textField

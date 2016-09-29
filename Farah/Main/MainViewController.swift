@@ -54,7 +54,7 @@ class MainViewController: UIViewController, AVAudioRecorderDelegate {
         label.numberOfLines = 0
         label.text = "Hold down to speak to Farah."
         label.font = UIFont.boldSystemFont(ofSize: labelFontSize)
-        label.textColor = .white
+        label.textColor = .lightGray
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -66,8 +66,8 @@ class MainViewController: UIViewController, AVAudioRecorderDelegate {
         textView.isSelectable = false
         textView.isScrollEnabled = true
         textView.font = UIFont.systemFont(ofSize: TVFontSize)
-        textView.textColor = .white
-        textView.backgroundColor = .black
+        textView.textColor = .lightGray
+        textView.backgroundColor = homeBGColor
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
