@@ -52,7 +52,7 @@ class MainViewController: UIViewController, AVAudioRecorderDelegate {
     let infoLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.text = "Hold down to speak to Farah."
+        label.text = holdDownMsg
         label.font = UIFont.boldSystemFont(ofSize: labelFontSize)
         label.textColor = .lightGray
         label.textAlignment = .center
@@ -87,6 +87,7 @@ class MainViewController: UIViewController, AVAudioRecorderDelegate {
         
         recognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(from:)))
         recognizer.minimumPressDuration = duration
+        talkButton.addTarget(self, action: #selector(handleTap(recording:)), for: .touchUpInside)
         talkButton.addGestureRecognizer(recognizer)
     }
 }

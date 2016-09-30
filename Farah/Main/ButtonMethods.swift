@@ -9,24 +9,36 @@
 private let timerInterval = 0.05 as Double
 private let alphaRate = 0.01 as CGFloat
 
-private let holdDownMsg = "Hold down to speak to Farah."
-private let speakNowMsg = "Speak now. Release to stop recording."
-private let transcribingMsg = "Transcribing..."
-
 import Foundation
 import UIKit
 
 // MARK: Button Methods
 extension MainViewController {
     
+    func handleTap(recording: Bool) {
+        if talkButton.imageView!.image == #imageLiteral(resourceName: "Microphone") {
+            handleButton(recording: true)
+        } else if talkButton.imageView!.image == #imageLiteral(resourceName: "Recording Microphone") {
+            handleButton(recording: false)
+        }
+    }
+    
     func handleLongPress(from sender: UILongPressGestureRecognizer) {
         if sender.state == .began {
+            handleButton(recording: true)
+        } else if sender.state == .ended {
+            handleButton(recording: false)
+        }
+    }
+    
+    func handleButton(recording: Bool) {
+        if recording {
             talkButton.setImage(#imageLiteral(resourceName: "Recording Microphone"), for: .normal)
             textView.text = ""
             changeLabel(transcribing: false)
             timer = Timer.scheduledTimer(timeInterval: timerInterval, target: self, selector: #selector(pulseButton), userInfo: nil, repeats: true)
             recordSpeech()
-        } else if sender.state == .ended {
+        } else {
             talkButton.setImage(#imageLiteral(resourceName: "Microphone"), for: .normal)
             talkButton.alpha = 1
             timer.invalidate()
