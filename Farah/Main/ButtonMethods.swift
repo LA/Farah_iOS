@@ -32,6 +32,9 @@ extension MainViewController {
     }
     
     func handleButton(recording: Bool) {
+        
+        if transcribing { return }
+        
         if recording {
             talkButton.setImage(#imageLiteral(resourceName: "Recording Microphone"), for: .normal)
             textView.text = ""

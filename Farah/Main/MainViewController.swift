@@ -19,8 +19,14 @@ class MainViewController: UIViewController, AVAudioRecorderDelegate {
     
     var name = "You"
     var canUnderstand = false
-    var timer = Timer()
     var increaseAlpha = false
+    var authorized = false
+    var transcribing = false {
+        didSet {
+            changeLabel(transcribing: transcribing)
+        }
+    }
+    var timer = Timer()
     var textToAnalyze: [String]?
     var audioRecorder: AVAudioRecorder?
     var recordingURL: URL!
@@ -38,8 +44,6 @@ class MainViewController: UIViewController, AVAudioRecorderDelegate {
             transcriptionURL = getDocumentsDirectory().appendingPathComponent("\(transcriptions)transcription.txt")
         }
     }
-    
-    var authorized = false
     
     let talkButton: UIButton = {
         let button = UIButton()
