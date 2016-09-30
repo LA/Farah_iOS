@@ -43,6 +43,19 @@ struct SimpleCases {
         return (nil, false)
     }
     
+    static func sayNotMuch(from string: String) -> (String?, Bool) {
+        
+        let message = string.lowercased()
+        
+        if message.contains("what's") {
+            if (message.contains("up") || message.contains("happening") || message.contains("good")) {
+                return ("Not much.", true)
+            }
+        }
+        
+        return (nil, false)
+    }
+    
     static func doesNotUnderstand() -> String {
         return "I'm sorry, I do not understand you."
     }

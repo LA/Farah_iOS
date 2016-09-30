@@ -57,7 +57,7 @@ class MainViewController: UIViewController, AVAudioRecorderDelegate {
         let label = UILabel()
         label.numberOfLines = 0
         label.text = holdDownMsg
-        label.font = UIFont.boldSystemFont(ofSize: labelFontSize)
+        label.font = UIFont.systemFont(ofSize: labelFontSize)
         label.textColor = .lightGray
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false

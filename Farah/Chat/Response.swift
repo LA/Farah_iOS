@@ -32,6 +32,10 @@ struct Response {
             return (SimpleCases.sayIAm(from: text).0!, true)
         }
         
+        if SimpleCases.sayNotMuch(from: text).1 {
+            return (SimpleCases.sayNotMuch(from: text).0!, true)
+        }
+        
         return (SimpleCases.doesNotUnderstand(), true)
     }
 }
