@@ -15,7 +15,7 @@ let homeBGColor = UIColor.white
 // Info Messages
 let holdDownMsg = "Hold down or tap the microphone to speak to Farah."
 let speakNowMsg = "Speak now. Release to stop recording."
-let transcribingMsg = "Transcribing..."
+let transcribingMsg = ""
 
 // Visual Format Extension
 extension UIView {

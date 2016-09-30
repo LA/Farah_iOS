@@ -27,6 +27,7 @@ class MainViewController: UIViewController, AVAudioRecorderDelegate {
         }
     }
     var timer = Timer()
+    var transcribingTimer = Timer()
     var textToAnalyze: [String]?
     var audioRecorder: AVAudioRecorder?
     var recordingURL: URL!

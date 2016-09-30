@@ -1,5 +1,5 @@
 //
-//  ButtonMethods.swift
+//  PropertyMethods.swift
 //  Farah
 //
 //  Created by Adar Butel on 9/21/16.
@@ -7,7 +7,6 @@
 //
 
 private let timerInterval = 0.05 as Double
-private let alphaRate = 0.01 as CGFloat
 
 import Foundation
 import UIKit
@@ -49,29 +48,19 @@ extension MainViewController {
         }
     }
     
-    func pulseButton() {
-        if increaseAlpha {
-            talkButton.alpha += alphaRate
-        } else {
-            talkButton.alpha -= alphaRate
-        }
-        
-        if talkButton.alpha >= 1 {
-            increaseAlpha = false
-        } else if talkButton.alpha <= 0.4 {
-            increaseAlpha = true
-        }
-    }
-    
     func changeLabel(transcribing: Bool) {
         if (transcribing) {
-            infoLabel.text = transcribingMsg
+            
+            transcribingTimer = Timer.scheduledTimer(timeInterval: timerInterval * 7.5, target: self, selector: #selector(animateTranscribe), userInfo: nil, repeats: true)
+            
             return
         }
-
+        
+        transcribingTimer.invalidate()
+        
         if (infoLabel.text == holdDownMsg) {
             infoLabel.text = speakNowMsg
-        } else if infoLabel.text == transcribingMsg {
+        } else {
             infoLabel.text = holdDownMsg
         }
     }
