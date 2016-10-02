@@ -12,12 +12,8 @@ struct SimpleCases {
     
     static func sayCharacterCount(from string: String) -> (String?, Bool) {
         
-        let message = string.lowercased()
-        
-        for keyword in Keywords.characterCount {
-            if message.contains(keyword) {
-                return ("Your message is \(string.characters.count) characters long.", true)
-            }
+        if string.contains(itemFrom: Keywords.characterCount) {
+            return (Response.characterCount(from: string), true)
         }
         
         return (nil, false)
@@ -25,12 +21,8 @@ struct SimpleCases {
     
     static func sayDoingWell(from string: String) -> (String?, Bool) {
         
-        let message = string.lowercased()
-        
-        for keyword in Keywords.doingWell {
-            if message.contains(keyword) {
-                return ("I'm doing well. Thank you for asking.", true)
-            }
+        if string.contains(itemFrom: Keywords.doingWell) {
+            return (Response.doingWell, true)
         }
         
         return (nil, false)
@@ -38,32 +30,23 @@ struct SimpleCases {
     
     static func sayIAm(from string: String) -> (String?, Bool) {
         
-        let message = string.lowercased()
-        
-        for keyword in Keywords.iAm {
-            if message.contains(keyword) {
-                return ("I am Farah, a chat bot, created in Swift 3 by Adar Butel.", true)
-            }
+        if string.contains(itemFrom: Keywords.iAm) {
+            return (Response.iAm, true)
         }
+        
         return (nil, false)
     }
     
     static func sayNotMuch(from string: String) -> (String?, Bool) {
         
-        let message = string.lowercased()
-        
-        if message.contains("what's") {
-            for keyword in Keywords.notMuch {
-                if message.contains(keyword) {
-                    return ("Not much.", true)
-                }
-            }
+        if string.contains(itemFrom: Keywords.notMuch) {
+            return (Response.notMuch, true)
         }
-        
+
         return (nil, false)
     }
     
     static func doesNotUnderstand() -> String {
-        return "I'm sorry, I do not understand you."
+        return Response.doesNotUnderstand
     }
 }

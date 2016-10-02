@@ -10,11 +10,11 @@ import Foundation
 
 struct Keywords {
     
-    static let characterCount = ["how long", "many characters", "how many"]
+    static let characterCount = "^[Hh]ow .* character[s]?"
     
-    static let doingWell = ["what's good", "how are you", "you doing"]
+    static let doingWell = "^[Hh]ow are you"
     
-    static let iAm = ["who are you", "what are you", "what is this"]
+    static let iAm = "(^[Ww]ho|[Ww]hat).*(you|this)"
     
-    static let notMuch = ["up", "happening", "good"]
+    static let notMuch = "^What.*(up|happening|going on)"
 }

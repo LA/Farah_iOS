@@ -58,3 +58,21 @@ extension Collection {
         
     }
 }
+
+
+// Regex Extension
+extension String {
+    func contains(itemFrom regex: String) -> Bool {
+        
+        do {
+            let regex = try NSRegularExpression(pattern: regex)
+            let nsString = self as NSString
+            let results = regex.matches(in: self, range: NSRange(location: 0, length: nsString.length))
+            return !results.isEmpty
+            //return results.map { nsString.substring(with: $0.range)}
+        } catch let error {
+            print("invalid regex: \(error.localizedDescription)")
+            return false
+        }
+    }
+}

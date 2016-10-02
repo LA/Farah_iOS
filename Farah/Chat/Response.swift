@@ -10,6 +10,17 @@ import Foundation
 
 struct Response {
     
+    // MARK: Common Responses
+    static func characterCount(from str: String) -> String {
+        return "Your message is \(str.characters.count) characters long."
+    }
+    
+    static let doingWell = "I'm doing well. Thank you for asking."
+    static let iAm = "I am Farah."
+    static let notMuch = "Not much."
+    static let doesNotUnderstand = "I'm sorry, I do not understand you."
+    
+    // MARK: Grab Responses
     static func grabResponse(from text: String) -> (String, Bool) {
         
         // Check for Texting.
