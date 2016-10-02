@@ -24,6 +24,7 @@ extension SignUpViewController {
         view.backgroundColor = homeBGColor
         
         // Center Everything Horizontally
+        view.addConstraint(NSLayoutConstraint(item: nameLabel, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0.0))
         view.addConstraint(NSLayoutConstraint(item: nameTextField, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0.0))
         view.addConstraint(NSLayoutConstraint(item: signupButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0.0))
         
@@ -33,6 +34,5 @@ extension SignUpViewController {
         // Layout Views with Visual Format
         view.addConstraints(withFormat: "V:|-75-[v2]-5-[v0]-300-[v1]|", views: nameTextField, signupButton, nameLabel)
         view.addConstraints(withFormat: "H:|-75-[v0]-75-|", views: nameTextField)
-        view.addConstraints(withFormat: "H:|-75-[v0]|", views: nameLabel)
     }
 }

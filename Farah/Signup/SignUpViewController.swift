@@ -31,6 +31,7 @@ class SignUpViewController: UIViewController {
         label.text = "Name"
         label.textColor = .lightGray
         label.font = UIFont.systemFont(ofSize: labelSize)
+        label.textAlignment = .center
         label.frame.size.height = 15
         return label
     }()
