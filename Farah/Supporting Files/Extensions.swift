@@ -63,7 +63,6 @@ extension Collection {
 // Regex Extension
 extension String {
     func contains(itemFrom regex: String) -> Bool {
-        
         do {
             let regex = try NSRegularExpression(pattern: regex)
             let nsString = self as NSString
@@ -74,5 +73,11 @@ extension String {
             print("invalid regex: \(error.localizedDescription)")
             return false
         }
+    }
+    
+    static let phoneNumberRegex = "([0-9]{1})?\\-?([0-9]{3})\\-?([0-9]{3})\\-?([0-9]{4})"
+    
+    func isPhoneNumber() -> Bool {
+        return self.contains(itemFrom: String.phoneNumberRegex)
     }
 }

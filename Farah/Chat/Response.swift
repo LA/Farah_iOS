@@ -23,9 +23,9 @@ struct Response {
     // MARK: Grab Responses
     static func grabResponse(from text: String) -> (String, Bool) {
         
-        // Check for Texting.
-        if text.lowercased().contains("text") {
-            return ("", false)
+        // Texting
+        if SimpleCases.text(from: text) {
+            return ("text", true)
         }
         
         // Say Character Count

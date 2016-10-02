@@ -10,6 +10,14 @@ import Foundation
 
 struct SimpleCases {
     
+    static func text(from string: String) -> (Bool) {
+        if string.contains(itemFrom: Keywords.text) {
+            return true
+        }
+        
+        return false
+    }
+    
     static func sayCharacterCount(from string: String) -> (String?, Bool) {
         
         if string.contains(itemFrom: Keywords.characterCount) {
@@ -49,4 +57,5 @@ struct SimpleCases {
     static func doesNotUnderstand() -> String {
         return Response.doesNotUnderstand
     }
+    
 }

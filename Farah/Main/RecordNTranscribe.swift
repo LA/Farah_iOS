@@ -74,15 +74,17 @@ extension MainViewController {
             if result!.isFinal {
                 
                 if let text = result?.bestTranscription.formattedString {
-                                        
+                    
                     // try text?.write(to: self.transcriptionURL!, atomically: true, encoding: .utf8)
                     
                     self.textView.insertText(text)
-                    
-                    self.textUser(from: text)
-
+                                        
                     if Response.grabResponse(from: text).1 {
-                        self.respond(with: Response.grabResponse(from: text).0)
+                        if (Response.grabResponse(from: text).0 == "text") {
+                            self.textUser(from: text)
+                        } else {
+                            self.respond(with: Response.grabResponse(from: text).0)
+                        }
                     }
                 }
                 

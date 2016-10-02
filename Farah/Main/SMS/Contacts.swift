@@ -20,8 +20,6 @@ extension MainViewController {
         
         do {
             
-            print("Made it here")
-            
             let contacts = try store.unifiedContacts(matching: CNContact.predicateForContacts(matchingName: name), keysToFetch:[CNContactGivenNameKey as CNKeyDescriptor, CNContactPhoneNumbersKey as CNKeyDescriptor])
             
             if let phoneNumber = (contacts[safe: 0]?.phoneNumbers[safe: 0]?.value)?.value(forKey: "digits") as? String {

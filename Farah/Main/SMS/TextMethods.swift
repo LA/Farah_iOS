@@ -23,41 +23,35 @@ extension MainViewController: MFMessageComposeViewControllerDelegate {
     }
     
     func textUser(from string: String) {
-        
-        let message = string.lowercased()
-        
-        if (message.contains("text")) {
-            
-            self.respond(with: textingMessage)
-            
-            let messageArray = string.components(separatedBy: " ")
-            
-            if let textIndex = messageArray.index(of: "text") ?? messageArray.index(of: "Text") {
                 
-                let personIndex = textIndex.advanced(by: 1)
-                
-                if let person = messageArray[safe: personIndex]?.capitalized {
-
-                    var phoneNumber: [String]? = [findPhoneNumber(from: person)]
-                    
-                    if phoneNumber! == [""] {
-                        phoneNumber = nil
-                    }
-                    
-                    var fixedMessageArray = Array(messageArray[personIndex + 1...messageArray.endIndex - 1])
-                    
-                    fixedMessageArray[0] = fixedMessageArray[0].capitalized
-                    
-                    let fixedMessage = fixedMessageArray.joined(separator: " ")
-                    
-                    openSMS(with: fixedMessage, to: phoneNumber)
-                    
-                    return
-                }
+        self.respond(with: textingMessage)
+        
+        var messageArray = string.components(separatedBy: " ")
+        
+        if let person = messageArray[safe: 1]?.capitalized {
+            
+            var phoneNumber: [String]?
+            
+            if person.isPhoneNumber() {
+                print("true")
+                phoneNumber = [person]
+            } else {
+                print("false")
+                phoneNumber = [findPhoneNumber(from: person)]
             }
             
-            self.respond(with: failureMessage)
+            messageArray.remove(at: 0)
+            messageArray.remove(at: 0)
+            messageArray[0] = messageArray[0].capitalized
+            
+            let message = messageArray.joined(separator: " ")
+            
+            openSMS(with: message, to: phoneNumber)
+            
+            return
         }
+        
+        self.respond(with: failureMessage)
     }
     
     // MARK: - Message Protocol Methods
