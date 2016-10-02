@@ -19,6 +19,7 @@ struct Response {
     static let iAm = "I am Farah."
     static let notMuch = "Not much."
     static let doesNotUnderstand = "I'm sorry, I do not understand you."
+    static let location = "I live in Los Angeles, CA."
     
     // MARK: Grab Responses
     static func grabResponse(from text: String) -> (String, Bool) {
@@ -26,6 +27,11 @@ struct Response {
         // Texting
         if SimpleCases.text(from: text) {
             return ("text", true)
+        }
+        
+        // Say Location
+        if SimpleCases.sayLocation(from: text).1 {
+            return (SimpleCases.sayLocation(from: text).0!, true)
         }
         
         // Say Character Count

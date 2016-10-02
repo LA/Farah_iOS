@@ -33,10 +33,8 @@ extension MainViewController: MFMessageComposeViewControllerDelegate {
             var phoneNumber: [String]?
             
             if person.isPhoneNumber() {
-                print("true")
                 phoneNumber = [person]
             } else {
-                print("false")
                 phoneNumber = [findPhoneNumber(from: person)]
             }
             

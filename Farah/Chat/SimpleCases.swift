@@ -18,6 +18,14 @@ struct SimpleCases {
         return false
     }
     
+    static func sayLocation(from string: String) -> (String?, Bool) {
+        if string.contains(itemFrom: Keywords.location) {
+            return (Response.location, true)
+        }
+        
+        return (nil, false)
+    }
+    
     static func sayCharacterCount(from string: String) -> (String?, Bool) {
         
         if string.contains(itemFrom: Keywords.characterCount) {
