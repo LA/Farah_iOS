@@ -13,7 +13,6 @@ import Speech
 // MARK: Record and Transcribe Methods
 extension MainViewController {
     
-    
     func recordSpeech() {
         let recordingSession = AVAudioSession.sharedInstance()
         
@@ -71,14 +70,14 @@ extension MainViewController {
                 return
             }
             
+            self.textView.text = "\(self.name): \(((result?.bestTranscription.formattedString)!))"
+            
             if result!.isFinal {
                 
                 if let text = result?.bestTranscription.formattedString {
                     
                     // try text?.write(to: self.transcriptionURL!, atomically: true, encoding: .utf8)
                     
-                    self.textView.insertText(text)
-                                        
                     if Response.grabResponse(from: text).1 {
                         if (Response.grabResponse(from: text).0 == "text") {
                             self.textUser(from: text)
@@ -91,7 +90,7 @@ extension MainViewController {
                 // Switch Label back to Default Hold Down Message
                 self.transcribing = false
             }
-        })
+            })
     }
     
     func respond(with message: String) {

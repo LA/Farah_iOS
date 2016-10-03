@@ -16,7 +16,7 @@ struct Keywords {
     
     static let iAm = "(^[Ww]ho|[Ww]hat).*(you|this)"
     
-    static let notMuch = "^[Ww]hat.*(up|happening|going on)"
+    static let notMuch = "[Ww]hat.*(up|happening|going on|good)"
     
     static let text = "(^[Tt]ext) (([0-9]{1})?\\-?([0-9]{3})\\-?([0-9]{3})\\-?([0-9]{4})|[a-zA-Z]*) (.*$)"
     

@@ -29,11 +29,6 @@ struct Response {
             return ("text", true)
         }
         
-        // Say Location
-        if SimpleCases.sayLocation(from: text).1 {
-            return (SimpleCases.sayLocation(from: text).0!, true)
-        }
-        
         // Say Character Count
         if SimpleCases.sayCharacterCount(from: text).1 {
             return (SimpleCases.sayCharacterCount(from: text).0!, true)
@@ -51,6 +46,11 @@ struct Response {
         
         if SimpleCases.sayNotMuch(from: text).1 {
             return (SimpleCases.sayNotMuch(from: text).0!, true)
+        }
+        
+        // Say Location
+        if SimpleCases.sayLocation(from: text).1 {
+            return (SimpleCases.sayLocation(from: text).0!, true)
         }
         
         return (SimpleCases.doesNotUnderstand(), true)
