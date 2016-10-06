@@ -12,6 +12,9 @@ import UIKit
 // Global BG Color
 let homeBGColor = UIColor.white
 
+// Global Timer Interval
+let timerInterval = 0.05 as Double
+
 // Info Messages
 let holdDownMsg = "Hold down or tap the microphone to speak to Farah."
 let speakNowMsg = "Speak now. Release to stop recording."

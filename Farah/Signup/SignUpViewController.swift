@@ -17,15 +17,17 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        signupButton.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
-        
         setupViews()
         
-        nameTextField.becomeFirstResponder()
+        // Add button method
+        signupButton.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
         
+        // Make the nameTextField active immediately
+        nameTextField.becomeFirstResponder()
         nameTextField.delegate = self
     }
     
+    // Label above nameTextField
     let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Name"
@@ -36,6 +38,7 @@ class SignUpViewController: UIViewController {
         return label
     }()
     
+    // TextField to enter name, will eventually be saved in NSUserDefaults probably
     let nameTextField: UITextField = {
         let textField = UITextField()
         textField.text = ""
@@ -50,6 +53,7 @@ class SignUpViewController: UIViewController {
         return textField
     }()
     
+    // Button to signup
     let signupButton: UIButton = {
         let button = UIButton()
         button.setTitle("", for: .normal)

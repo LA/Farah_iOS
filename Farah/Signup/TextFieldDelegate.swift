@@ -12,6 +12,8 @@ import UIKit
 extension SignUpViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        // Clear textfield when user starts editing
         textField.text = ""
     }
     

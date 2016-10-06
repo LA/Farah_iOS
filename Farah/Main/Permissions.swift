@@ -23,7 +23,7 @@ extension MainViewController {
         // make a single authorized boolean from all three
         let authorized = recordingAuthorized && transcribeAuthorized && contactsAuthorized
         
-        //if we're missing one show the first screen
+        // if we're missing one show the first screen
         if !authorized {
             requestContactPermissions()
         }

@@ -22,7 +22,7 @@ struct Response {
     static let location = "I live in Los Angeles, CA."
     
     // MARK: Grab Responses
-    static func grabResponse(from text: String) -> (String, Bool) {
+    static func grabSimpleResponse(from text: String) -> (String, Bool) {
         
         // Texting
         if SimpleCases.text(from: text) {

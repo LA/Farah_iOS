@@ -21,11 +21,15 @@ class MainViewController: UIViewController, AVAudioRecorderDelegate {
     var canUnderstand = false
     var increaseAlpha = false
     var authorized = false
+    
     var transcribing = false {
+        
+        // When transcribing is changed, changeLabel based on it
         didSet {
             changeLabel(transcribing: transcribing)
         }
     }
+    
     var timer = Timer()
     var transcribingTimer = Timer()
     var textToAnalyze: [String]?
@@ -34,6 +38,7 @@ class MainViewController: UIViewController, AVAudioRecorderDelegate {
     var transcriptionURL: URL?
     var recognizer: UILongPressGestureRecognizer!
     
+    // Pretty sure this is useless, will test eventually
     var audioRecordings = 0 {
         didSet {
             recordingURL = getDocumentsDirectory().appendingPathComponent("\(audioRecordings)recording.m4a")
@@ -46,6 +51,7 @@ class MainViewController: UIViewController, AVAudioRecorderDelegate {
         }
     }
     
+    // Button used for talking to Farah
     let talkButton: UIButton = {
         let button = UIButton()
         button.setTitle("", for: .normal)
@@ -54,6 +60,7 @@ class MainViewController: UIViewController, AVAudioRecorderDelegate {
         return button
     }()
     
+    // Label above talkButton
     let infoLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -65,6 +72,7 @@ class MainViewController: UIViewController, AVAudioRecorderDelegate {
         return label
     }()
     
+    // Textview for chat with Farah
     let textView: UITextView = {
         let textView = UITextView()
         textView.isEditable = false
@@ -79,8 +87,10 @@ class MainViewController: UIViewController, AVAudioRecorderDelegate {
     
     override func viewDidLoad() {
         
+        // Hide the navigation bar
         navigationController?.isNavigationBarHidden = true
         
+        // Pretty sure this is also useless
         recordingURL = getDocumentsDirectory().appendingPathComponent("\(audioRecordings)recording.m4a")
     }
     
@@ -90,6 +100,7 @@ class MainViewController: UIViewController, AVAudioRecorderDelegate {
         setupViews()
         checkPermissions()
         
+        // Add all methods and recognizers to button
         recognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(from:)))
         recognizer.minimumPressDuration = duration
         talkButton.addTarget(self, action: #selector(handleTap(recording:)), for: .touchUpInside)
@@ -100,6 +111,7 @@ class MainViewController: UIViewController, AVAudioRecorderDelegate {
 // MARK: URL Methods
 extension MainViewController {
     
+    // Also probably useless
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentsDirectory = paths[0]
