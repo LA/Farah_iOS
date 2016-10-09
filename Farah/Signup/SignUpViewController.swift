@@ -8,8 +8,8 @@
 
 import UIKit
 
-private let labelSize = 20 as CGFloat
-private let TFFontSize = 30 as CGFloat
+private let labelSize = 15 as CGFloat
+private let TFFontSize = 25 as CGFloat
 
 // MARK: Properties & View Controller Methods
 class SignUpViewController: UIViewController {
