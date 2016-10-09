@@ -12,7 +12,7 @@ import UIKit
 extension SignUpViewController {
     
     // Called when signup is pressed
-    func handleTap() {
+    func signUpTapped() {
         
         // Create Farah MainVC
         let vc = MainViewController()
@@ -28,5 +28,20 @@ extension SignUpViewController {
         }
         
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    // Called when a gender is selected
+    func genderSelected(sender: UIButton) {
+        switch sender {
+        case femaleButton:
+            femaleButton.isSelected = true
+            maleButton.isSelected = false
+        case maleButton:
+            maleButton.isSelected = true
+            femaleButton.isSelected = false
+        default:
+            maleButton.isSelected = false
+            femaleButton.isSelected = false
+        }
     }
 }

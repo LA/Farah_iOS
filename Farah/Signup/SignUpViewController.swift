@@ -20,7 +20,9 @@ class SignUpViewController: UIViewController {
         setupViews()
         
         // Add button method
-        signupButton.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
+        signupButton.addTarget(self, action: #selector(signUpTapped), for: .touchUpInside)
+        maleButton.addTarget(self, action: #selector(genderSelected), for: .touchUpInside)
+        femaleButton.addTarget(self, action: #selector(genderSelected), for: .touchUpInside)
         
         // Make the nameTextField active immediately
         nameTextField.becomeFirstResponder()
@@ -59,6 +61,22 @@ class SignUpViewController: UIViewController {
         button.setTitle("", for: .normal)
         button.setImage(#imageLiteral(resourceName: "Signup"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    
+    // MARK: Gender Buttons
+    let maleButton: UIButton = {
+        let button = UIButton()
+        button.setImage(#imageLiteral(resourceName: "Male Button"), for: .normal)
+        button.setImage(#imageLiteral(resourceName: "Male Button Selected"), for: .selected)
+        return button
+    }()
+    
+    let femaleButton: UIButton = {
+        let button = UIButton()
+        button.setImage(#imageLiteral(resourceName: "Female Button"), for: .normal)
+        button.setImage(#imageLiteral(resourceName: "Female Button Selected"), for: .selected)
         return button
     }()
 }
