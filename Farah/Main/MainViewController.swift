@@ -35,19 +35,12 @@ class MainViewController: UIViewController, AVAudioRecorderDelegate {
     var textToAnalyze: [String]?
     var audioRecorder: AVAudioRecorder?
     var recordingURL: URL!
-    var transcriptionURL: URL?
     var recognizer: UILongPressGestureRecognizer!
     
     // Pretty sure this is useless, will test eventually
     var audioRecordings = 0 {
         didSet {
             recordingURL = getDocumentsDirectory().appendingPathComponent("\(audioRecordings)recording.m4a")
-        }
-    }
-    
-    var transcriptions = 0 {
-        didSet {
-            transcriptionURL = getDocumentsDirectory().appendingPathComponent("\(transcriptions)transcription.txt")
         }
     }
     

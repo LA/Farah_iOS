@@ -54,7 +54,6 @@ extension MainViewController {
         
         // If the recording was successful
         if success {
-            transcriptions += 1
             
             // Start transcribing recording.
             transcribeAudio(from: recordingURL)
@@ -92,8 +91,6 @@ extension MainViewController {
                 // Make sure there's a result
                 if let text = result?.bestTranscription.formattedString {
                     
-                    // Write text to file
-                    // try text?.write(to: self.transcriptionURL!, atomically: true, encoding: .utf8)
                     
                     // Check for response from SimpleCases
                     if Response.grabSimpleResponse(from: text).1 {
