@@ -10,6 +10,10 @@ import Foundation
 
 struct Keywords {
     
+    static let keywords: [String] = {
+        return [characterCount, doingWell, iAm, notMuch, text, location]
+    }()
+    
     static let characterCount = "^[Hh]ow .* character[s]?"
     
     static let doingWell = "^[Hh]ow are you"

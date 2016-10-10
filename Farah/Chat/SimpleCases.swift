@@ -10,6 +10,16 @@ import Foundation
 
 struct SimpleCases {
     
+    static func check(_ string: String) -> (String?, Bool) {
+        for key in Keywords.keywords {
+            if string.contains(itemFrom: key) {
+                return (key, true)
+            }
+        }
+        
+        return (nil, false)
+    }
+    
     static func text(from string: String) -> (Bool) {
         if string.contains(itemFrom: Keywords.text) {
             return true
@@ -17,53 +27,4 @@ struct SimpleCases {
         
         return false
     }
-    
-    static func sayCharacterCount(from string: String) -> (String?, Bool) {
-        
-        if string.contains(itemFrom: Keywords.characterCount) {
-            return (Response.characterCount(from: string), true)
-        }
-        
-        return (nil, false)
-    }
-    
-    static func sayDoingWell(from string: String) -> (String?, Bool) {
-        
-        if string.contains(itemFrom: Keywords.doingWell) {
-            return (Response.doingWell, true)
-        }
-        
-        return (nil, false)
-    }
-    
-    static func sayIAm(from string: String) -> (String?, Bool) {
-        
-        if string.contains(itemFrom: Keywords.iAm) {
-            return (Response.iAm, true)
-        }
-        
-        return (nil, false)
-    }
-    
-    static func sayNotMuch(from string: String) -> (String?, Bool) {
-        
-        if string.contains(itemFrom: Keywords.notMuch) {
-            return (Response.notMuch, true)
-        }
-
-        return (nil, false)
-    }
-    
-    static func sayLocation(from string: String) -> (String?, Bool) {
-        if string.contains(itemFrom: Keywords.location) {
-            return (Response.location, true)
-        }
-        
-        return (nil, false)
-    }
-    
-    static func doesNotUnderstand() -> String {
-        return Response.doesNotUnderstand
-    }
-    
 }

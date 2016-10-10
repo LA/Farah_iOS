@@ -21,6 +21,27 @@ struct Response {
     static let doesNotUnderstand = "I'm sorry, I do not understand you."
     static let location = "I live in Los Angeles, CA."
     
+    static func getResponse(from key: String, with text: String) -> String {
+        var response = ""
+        
+        switch key {
+        case Keywords.characterCount:
+            response = Response.characterCount(from: text)
+        case Keywords.doingWell:
+            response = Response.doingWell
+        case Keywords.notMuch:
+            response = Response.notMuch
+        case Keywords.iAm:
+            response = Response.iAm
+        case Keywords.location:
+            response = Response.location
+        default:
+            return response
+        }
+        
+        return response
+    }
+    
     // MARK: Grab Responses
     static func grabSimpleResponse(from text: String) -> (String, Bool) {
         
@@ -29,30 +50,11 @@ struct Response {
             return ("text", true)
         }
         
-        // Say Character Count
-        if SimpleCases.sayCharacterCount(from: text).1 {
-            return (SimpleCases.sayCharacterCount(from: text).0!, true)
+        if SimpleCases.check(text).1 {
+            let response = Response.getResponse(from: SimpleCases.check(text).0!, with: text)
+            return (response, true)
         }
         
-        // Say Doing Well
-        if SimpleCases.sayDoingWell(from: text).1 {
-            return (SimpleCases.sayDoingWell(from: text).0!, true)
-        }
-        
-        // Say I Am Farah
-        if SimpleCases.sayIAm(from: text).1 {
-            return (SimpleCases.sayIAm(from: text).0!, true)
-        }
-        
-        if SimpleCases.sayNotMuch(from: text).1 {
-            return (SimpleCases.sayNotMuch(from: text).0!, true)
-        }
-        
-        // Say Location
-        if SimpleCases.sayLocation(from: text).1 {
-            return (SimpleCases.sayLocation(from: text).0!, true)
-        }
-        
-        return (SimpleCases.doesNotUnderstand(), true)
+        return (Response.doesNotUnderstand, true)
     }
 }

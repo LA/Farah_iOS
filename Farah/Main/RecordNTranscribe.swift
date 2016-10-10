@@ -91,7 +91,6 @@ extension MainViewController {
                 // Make sure there's a result
                 if let text = result?.bestTranscription.formattedString {
                     
-                    
                     // Check for response from SimpleCases
                     if Response.grabSimpleResponse(from: text).1 {
                         
