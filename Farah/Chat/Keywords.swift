@@ -20,5 +20,5 @@ struct Keywords {
     
     static let text = "(^[Tt]ext) (([0-9]{1})?\\-?([0-9]{3})\\-?([0-9]{3})\\-?([0-9]{4})|[a-zA-Z]*) (.*$)"
     
-    static let location = "[Ww][here|hat].*[live|your home|location|from]"
+    static let location = "[Ww](here|hat).*(live|your home|location|you from)"
 }
