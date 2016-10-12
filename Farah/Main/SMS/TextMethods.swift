@@ -63,14 +63,21 @@ extension MainViewController: MFMessageComposeViewControllerDelegate {
         messageArray.remove(at: 0)
         messageArray.remove(at: 0)
         
-        // If full name and no message. Just text user.
-        if textingFullName && messageArray.count <= 1 {
-            message = ""
-            openSMS(with: message, to: phoneNumber)
-        
-        // If full name, also remove surname.
-        } else if textingFullName && messageArray.count > 1 {
-            messageArray.remove(at: 0)
+
+        if textingFullName {
+            // If no message
+            if messageArray.count <= 1 {
+                
+                // Just text user.
+                message = ""
+                openSMS(with: message, to: phoneNumber)
+                
+            // If full name with message
+            } else {
+                
+                // remove surname.
+                messageArray.remove(at: 0)
+            }
         }
         
         // Capitalize the first word
