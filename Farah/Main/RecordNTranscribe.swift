@@ -98,7 +98,7 @@ extension MainViewController {
                         if (Response.grabSimpleResponse(from: text).0 == "text") {
                             
                             // Text user
-                            self.textUser(from: text)
+                            self.handleText(from: text)
                         } else {
                             
                             // If not text command, respond with first available SimpleResponse
@@ -110,6 +110,6 @@ extension MainViewController {
                 // Switch Label back to Default Hold Down Message
                 self.transcribing = false
             }
-            })
+        })
     }
 }
