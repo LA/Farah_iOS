@@ -28,20 +28,28 @@ extension SignUpViewController {
         
         view.backgroundColor = homeBGColor
         
+        layoutNSConstraints()
+        layoutVFL()
+    }
+    
+    func layoutNSConstraints() {
         // Center Everything Horizontally
         view.addConstraint(NSLayoutConstraint(item: nameLabel, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0.0))
         view.addConstraint(NSLayoutConstraint(item: nameTextField, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0.0))
         view.addConstraint(NSLayoutConstraint(item: signupButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0.0))
-                
+        
+        view.addConstraint(NSLayoutConstraint(item: nameTextField, attribute: .width, relatedBy: .equal, toItem: view, attribute: .width, multiplier: 0.60, constant: 1))
+    }
+    
+    func layoutVFL() {
         // Layout Views with Visual Format
         view.addConstraints(withFormat: "V:|-75-[v0]-5-[v1]-25-[v2]", views: nameLabel, nameTextField, maleButton)
         view.addConstraints(withFormat: "V:|-75-[v0]-5-[v1]-25-[v2]", views: nameLabel, nameTextField, femaleButton)
         
         view.addConstraints(withFormat: "H:|-\((UIScreen.main.bounds.size.width / 3)-10)-[v0]", views: maleButton)
         view.addConstraints(withFormat: "H:[v0]-5-[v1]-\((UIScreen.main.bounds.size.width / 3)-10)-|", views: maleButton, femaleButton)
-
-        view.addConstraints(withFormat: "V:[v0]-50-|", views: signupButton)
         
-        view.addConstraint(NSLayoutConstraint(item: nameTextField, attribute: .width, relatedBy: .equal, toItem: view, attribute: .width, multiplier: 0.60, constant: 1))
+        view.addConstraints(withFormat: "V:[v0]-50-|", views: signupButton)
+  
     }
 }
