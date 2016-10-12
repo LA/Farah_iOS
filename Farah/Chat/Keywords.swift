@@ -22,7 +22,7 @@ struct Keywords {
     
     static let notMuch = "[Ww]hat.*(up|happening|going on|good)"
     
-    static let text = "(^[Tt]ext) (\(String.phoneNumberRegex)|[a-zA-Z]*) (.*$)"
+    static let text = "(^[Tt]ext) (\(String.phoneNumberRegex)|[a-zA-Z]*)"
     
     static let location = "[Ww](here|hat).*(live|your home|location|you from)"
 }

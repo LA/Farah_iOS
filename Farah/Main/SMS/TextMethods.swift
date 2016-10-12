@@ -38,7 +38,12 @@ extension MainViewController: MFMessageComposeViewControllerDelegate {
         
         // Fail check that needs to be fixed with multi line communication
         if messageArray.count < 3 {
-            self.UIrespond(with: failureMessage)
+            if let person = messageArray[safe: 1] {
+                phoneNumber  = getNumber(from: person)
+                openSMS(with: message, to: phoneNumber)
+            } else {
+                UIrespond(with: failureMessage)
+            }
             return
         }
         
@@ -51,17 +56,12 @@ extension MainViewController: MFMessageComposeViewControllerDelegate {
             person = messageArray[1].capitalized
         }
         
-        // If the 2nd word of messageArray is a phoneNumber, make that the phone number
-        if person.isPhoneNumber() {
-            phoneNumber = [person]
-        } else {
-            // Or else find the phoneNumber from contacts
-            phoneNumber = [findPhoneNumber(from: person)]
-        }
-        
         // Remove 'Text Person' from messageArray
         messageArray.remove(at: 0)
         messageArray.remove(at: 0)
+        
+        // Get Phone Number Ready to send.
+        phoneNumber = getNumber(from: person)
         
 
         if textingFullName {
@@ -91,6 +91,18 @@ extension MainViewController: MFMessageComposeViewControllerDelegate {
         openSMS(with: message, to: phoneNumber)
         
         return
+    }
+    
+    func getNumber(from person: String) -> [String] {
+        var phoneNumber = ""
+        if person.isPhoneNumber() {
+            phoneNumber = person
+        } else {
+            // Or else find the phoneNumber from contacts
+            phoneNumber = findPhoneNumber(from: person)
+        }
+        
+        return [phoneNumber]
     }
     
     
