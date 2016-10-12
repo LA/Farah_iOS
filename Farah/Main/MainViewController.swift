@@ -18,6 +18,7 @@ private let duration = 0.25
 class MainViewController: UIViewController, AVAudioRecorderDelegate {
     
     var name = "You"
+    var textingFullName = false
     var canUnderstand = false
     var increaseAlpha = false
     var authorized = false

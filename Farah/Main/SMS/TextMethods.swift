@@ -26,7 +26,7 @@ extension MainViewController: MFMessageComposeViewControllerDelegate {
     
     func handleText(from string: String) {
         // Create properties to use
-        var textingFullName = false
+        textingFullName = false
         var person = ""
         var phoneNumber = [""]
         var message = ""
@@ -36,7 +36,7 @@ extension MainViewController: MFMessageComposeViewControllerDelegate {
         // Create array of words in message
         var messageArray = string.components(separatedBy: " ")
         
-        // Fail check that needs to be fixed with multi line communication
+        // Empty messages.
         if messageArray.count < 3 {
             if let person = messageArray[safe: 1] {
                 phoneNumber  = getNumber(from: person)
@@ -48,13 +48,7 @@ extension MainViewController: MFMessageComposeViewControllerDelegate {
         }
         
         // Check if the 3rd word is capital. If it is, assume it's a surname.
-        if messageArray[2].components(separatedBy: "")[0].contains(itemFrom: "[A-Z]") {
-            textingFullName = true
-            person = "\(messageArray[1].capitalized) \(messageArray[2].capitalized)"
-        } else {
-            // Let the person be the 2nd word in the messageArray
-            person = messageArray[1].capitalized
-        }
+        person = getPerson(from: messageArray)
         
         // Remove 'Text Person' from messageArray
         messageArray.remove(at: 0)
@@ -91,6 +85,19 @@ extension MainViewController: MFMessageComposeViewControllerDelegate {
         openSMS(with: message, to: phoneNumber)
         
         return
+    }
+    
+    func getPerson(from messageArray: [String]) -> String {
+        var person = ""
+        if messageArray[2].components(separatedBy: "")[0].contains(itemFrom: "[A-Z]") {
+            textingFullName = true
+            person = "\(messageArray[1].capitalized) \(messageArray[2].capitalized)"
+        } else {
+            // Let the person be the 2nd word in the messageArray
+            person = messageArray[1].capitalized
+        }
+        
+        return person
     }
     
     func getNumber(from person: String) -> [String] {
