@@ -46,11 +46,8 @@ extension MainViewController: MFMessageComposeViewControllerDelegate {
         if messageArray[2].components(separatedBy: "")[0].contains(itemFrom: "[A-Z]") {
             textingFullName = true
             person = "\(messageArray[1].capitalized) \(messageArray[2].capitalized)"
-        }
-        
-        // Let the person be the 2nd word in the messageArray
-        // Needs to be better optimized to cross-check contacts
-        if !textingFullName {
+        } else {
+            // Let the person be the 2nd word in the messageArray
             person = messageArray[1].capitalized
         }
         
