@@ -18,7 +18,7 @@ struct Keywords {
     
     static let doingWell = "^[Hh]ow are you"
     
-    static let iAm = "([Ww]ho|[Ww]hat).*(you|this)"
+    static let iAm = "([Ww]ho|[Ww]hat).*(you$|this)"
     
     static let notMuch = "[Ww]hat.*(up|happening|going on|good)"
     
