@@ -39,7 +39,7 @@ extension MainViewController: MFMessageComposeViewControllerDelegate {
         // Empty messages.
         if messageArray.count < 3 {
             if let person = messageArray[safe: 1] {
-                phoneNumber  = getNumber(from: person)
+                phoneNumber = getNumber(from: person)
                 openSMS(with: message, to: phoneNumber)
             } else {
                 UIrespond(with: failureMessage)
@@ -81,7 +81,6 @@ extension MainViewController: MFMessageComposeViewControllerDelegate {
         message = messageArray.joined(separator: " ")
         
         // Open the SMS view to text phoneNumber with message
-        // Need to add possibility of nil message or phoneNumber above
         openSMS(with: message, to: phoneNumber)
         
         return

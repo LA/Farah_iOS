@@ -19,6 +19,13 @@ class SignUpViewController: UIViewController {
         
         setupViews()
         
+        // Add Gesture Recognizers To Close Keyboard
+        let tap = UITapGestureRecognizer(target: self, action: #selector(endEditing))
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(endEditing))
+        swipe.direction = .down
+        view.addGestureRecognizer(tap)
+        view.addGestureRecognizer(swipe)
+        
         // Add button method
         signupButton.addTarget(self, action: #selector(signUpTapped), for: .touchUpInside)
         maleButton.addTarget(self, action: #selector(genderSelected), for: .touchUpInside)

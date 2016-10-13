@@ -24,4 +24,8 @@ extension SignUpViewController: UITextFieldDelegate {
         
         return true
     }
+    
+    func endEditing() {
+        self.view.endEditing(true)
+    }
 }
