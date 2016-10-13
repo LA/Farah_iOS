@@ -26,12 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.rootViewController = navController
         
-        //        // Change navigation bar to black, and navigation bar text to purple and font to bold size 23
-        //        UINavigationBar.appearance().barTintColor = UIColor.black
-        //        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.genziPurple, NSFontAttributeName: UIFont.systemFont(ofSize: 25)]
-        //
-        //        application.statusBarStyle = .lightContent
-        
         return true
     }
 
