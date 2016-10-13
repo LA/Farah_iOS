@@ -20,6 +20,7 @@ struct Response {
     static let notMuch = "Not much."
     static let doesNotUnderstand = "I'm sorry, I do not understand you."
     static let location = "I live in Los Angeles, CA."
+    static let favShow = "Futurama definitely."
     
     static func getResponse(from key: String, with text: String) -> String {
         var response = ""
@@ -35,6 +36,8 @@ struct Response {
             response = Response.iAm
         case Keywords.location:
             response = Response.location
+        case Keywords.favShow:
+            response = Response.favShow
         default:
             return response
         }
