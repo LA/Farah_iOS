@@ -13,7 +13,7 @@ extension SignUpViewController {
     
     // Called when signup is pressed
     func signUpTapped() {
-        
+    
         // Create Farah MainVC
         let vc = MainViewController()
         

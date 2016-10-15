@@ -32,6 +32,7 @@
 		E88AD9591D9245C5002672D4 /* FarahTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88AD9581D9245C5002672D4 /* FarahTests.swift */; };
 		E88AD9641D9245C5002672D4 /* FarahUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88AD9631D9245C5002672D4 /* FarahUITests.swift */; };
 		E8B5DE281D9E2F6B0091D3C0 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B5DE271D9E2F6B0091D3C0 /* Animations.swift */; };
+		E8CB5E0D1DB2C656004260DB /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CB5E0C1DB2C656004260DB /* CoreDataController.swift */; };
 		E8D5EA9E1DA0258800612B76 /* Keywords.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D5EA9D1DA0258800612B76 /* Keywords.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		E88AD9631D9245C5002672D4 /* FarahUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarahUITests.swift; sourceTree = "<group>"; };
 		E88AD9651D9245C5002672D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8B5DE271D9E2F6B0091D3C0 /* Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
+		E8CB5E0C1DB2C656004260DB /* CoreDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		E8D5EA9D1DA0258800612B76 /* Keywords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keywords.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				E81443381D93A92000A6C054 /* Chat */,
+				E8CB5E0B1DB2C646004260DB /* Data */,
 				E814431D1D938EDB00A6C054 /* Main */,
 				E814432F1D9393A100A6C054 /* Signup */,
 				E88AD94A1D9245C5002672D4 /* Assets.xcassets */,
@@ -218,6 +221,14 @@
 				E88AD9651D9245C5002672D4 /* Info.plist */,
 			);
 			path = FarahUITests;
+			sourceTree = "<group>";
+		};
+		E8CB5E0B1DB2C646004260DB /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E8CB5E0C1DB2C656004260DB /* CoreDataController.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,6 +374,7 @@
 				E86A7A101D9A08F700C88CC9 /* TwitterHelper.swift in Sources */,
 				E8837F881D9C31F500483DB5 /* Contacts.swift in Sources */,
 				E81443351D9393EE00A6C054 /* Button-Methods.swift in Sources */,
+				E8CB5E0D1DB2C656004260DB /* CoreDataController.swift in Sources */,
 				E8B5DE281D9E2F6B0091D3C0 /* Animations.swift in Sources */,
 				E81443331D9393BA00A6C054 /* Layout-.swift in Sources */,
 				E8837F861D9C310500483DB5 /* RecordNTranscribe.swift in Sources */,
