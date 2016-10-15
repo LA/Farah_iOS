@@ -18,15 +18,14 @@ extension SignUpViewController {
         let vc = MainViewController()
         
         // If user entered a name, make that the name
-        // else just make it 'You'
-        if let name = nameTextField.text {
-            if name == "" {
-                vc.name = "You"
-            } else {
-                vc.name = name
-            }
-        }
-        
+        // else just make it 'You'        
+        var name = nameTextField.text!
+        if name == "" { name = "You" }
+
+        UserDefaults.standard.set(name, forKey: "name")
+        UserDefaults.standard.set(true, forKey: "isSaved")
+
+        vc.name = name
         navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -20,7 +20,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        // Create the initial view controller and embed it into a navigation controller
+        // If user has already signed in. Send em str8 in.
+        if let saved = UserDefaults.standard.value(forKey: "isSaved") as? Bool {
+            // Check is saved
+            if saved {
+                // Check if user has a name
+                if let name = UserDefaults.standard.value(forKey: "name") as? String {
+                    // Create main view controller and set name
+                    let vc = MainViewController()
+                    vc.name = name
+                    
+                    let navController = UINavigationController(rootViewController: vc)
+                    window?.rootViewController = navController
+                    
+                    return true
+                }
+            }
+        }
+        
+        // If not signed in, Create the signup view controller and embed it into a navigation controller
         let vc = SignUpViewController()
         let navController = UINavigationController(rootViewController: vc)
         
