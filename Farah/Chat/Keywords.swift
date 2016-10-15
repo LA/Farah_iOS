@@ -16,7 +16,7 @@ struct Keywords {
     
     static let characterCount = "^[Hh]ow .* character[s]?"
     
-    static let doingWell = "^[Hh]ow are you"
+    static let doingWell = "^[Hh]ow.*(going|you( doing)?)"
     
     static let iAm = "([Ww]ho|[Ww]hat).*(you$|this)"
     
